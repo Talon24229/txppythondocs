@@ -5,10 +5,6 @@ import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
 GPIO.setwarnings(False) # Ignore warning for now
 GPIO.setmode(GPIO.BCM) # Use physical pin numbering
 
-
-#Us a module for requesting data online
-import requests
-
 #Us a module to control time
 import time
 
@@ -90,7 +86,6 @@ while True:
     if GPIO.input(6) == GPIO.LOW:
         print("Button 6 was pushed")
         mcDonald()
-        requests.get("http://192.168.10.53:5000/sfx?file=nogodpleaseno")
     elif GPIO.input(13) == GPIO.LOW:
         house()
         print("Button 13 was pushed")
